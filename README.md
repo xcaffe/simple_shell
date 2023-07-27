@@ -1,5 +1,5 @@
 Topic: SIMPLE SHELL
-Authors: Ahamefule faithful /
+Authors: Ahamefule faithful / Phozisa Mapuma
 
 OBJECTIVES
 
