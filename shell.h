@@ -18,5 +18,6 @@ void print_errors(char **array, char *av[], int cont, int num);
 int _putchar(char c);
 int _atoi(char *s);
 int _isdigit(int c);
+void prompt(void);
 
 #endif

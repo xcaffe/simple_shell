@@ -2,7 +2,8 @@
 #include <string.h>
 #include <stdio.h>
 /**
- * main: splits a string and returns an array of each word of the string
+ * main - splits a string and returns an array of each word of the string
+ * @void: nothing
  * Return: 0
  */
 int main(void)
@@ -25,4 +26,4 @@ int main(void)
 		}
 	}
 	return (0);
-}	
+}
