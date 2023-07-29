@@ -1,43 +1,69 @@
 #include "shell.h"
 /**
- * exit_cmd - exits the shell
- * @array: array
- * @av: av
- * @line: getline
- * @cont: executes
- * @ret_status: status to exit
+ * _strncpy - this is to cpy string to another location
+ * @dest: destination
+ * @src: source
+ * @n: copied words
  * Return: 0
  */
-int exit_cmd(char **array, char *av[], char *line, int cont, int ret_status)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int a = 0, stat_exit, number;
+	int a = 0;
+	int b;
+	char *s = dest;
 
-	while (array[a] != NULL)
+	while (src[a] != '\0' && a < n - 1)
 	{
+		dest[a] = src[a];
 		a++;
 	}
-	if (a == 1)
+	if (a < n)
 	{
-		free(array);
-		free(line);
-		exit(ret_status);
-	}
-	if (a >= 2)
-	{
-		for (a = 0; array[1][a] != '\0'; a++)
+		b = a;
+		while (b < n)
 		{
-			number = _isdigit(array[1][a]);
-			if (number == 0)
-			{
-				print_errors(array, av, cont, 2);
-				ret_status = 2;
-				return (ret_status);
-			}
+			dest[b] = '\0';
+			b++;
 		}
-		stat_exit = _atoi(array[1]);
-		free(array);
-		free(array);
-		exit(stat_exit);
 	}
-	return (ret_status);
+	return (s);
+}
+/**
+ **_strncat - concatenates two strings
+ *@dest: destination
+ *@src: source
+ *@n: words
+ *Return: 0
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+	int a = 0;
+	int b = 0;
+	char *s = dest;
+
+	while (dest[a] != '\0')
+		a++;
+	while (src[b] != '\0' && b < n)
+	{
+		dest[a] = src[b];
+			a++;
+			b++;
+	}
+	if (b < n)
+		dest[a] = '\0';
+	return (s);
+}
+/**
+ **_strchr - character string
+ *@s: string
+ *@c: character
+ *Return: (s)
+ */
+char *_strchr(char *s, char c)
+{
+	do {
+		if (*s == c)
+			return (s);
+	} while (*s++ != '\0');
+	return (NULL);
 }

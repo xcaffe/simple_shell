@@ -12,12 +12,13 @@
 
 int print_env(void);
 extern char **environ;
-int print_env(void);
 int exit_cmd(char **array, char *av[], char *line, int cont, int ret_status);
 void print_errors(char **array, char *av[], int cont, int num);
 int _putchar(char c);
 int _atoi(char *s);
 int _isdigit(int c);
 void prompt(void);
-
+int bfree(void **ptr);
+char *_strncpy(char *dest, char *src, int n);
+char *_strchr(char *s, char c);
 #endif
